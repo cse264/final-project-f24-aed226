@@ -1,0 +1,13 @@
+{
+    "scripts": {
+        "start": "npx concurrently \"npm run start-backend\" \"npm run start-frontend\"",
+        "start-backend": "cd backend && npm start",
+        "start-frontend": "cd frontend/frontend && npm start"
+    },
+    "devDependencies": {
+        "concurrently": "^9.1.0"
+    },
+    "dependencies": {
+        "cors": "^2.8.5"
+    }
+}
