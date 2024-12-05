@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f7fb;
+  background-color: #b9bec5;
 }
 
 h2 {
@@ -15,6 +15,7 @@ h2 {
 
 button {
   cursor: pointer;
+  gap: 15px;
   background-color: #4CAF50;
   color: white;
   border: none;

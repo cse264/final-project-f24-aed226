@@ -77,6 +77,30 @@ app.post('/api/comments', async (req, res) => {
     }
 });
 
+app.post('/api/guests', async (req, res) => {
+    const { user_id, check_in_date, check_out_date, room_type } = req.body;
+    try {
+        const existingGuest = await pool.query(
+            'SELECT * FROM guests WHERE user_id = $1 AND check_in_date = $2 AND check_out_date = $3 AND room_type = $4',
+            [user_id, check_in_date, check_out_date, room_type]
+        );
+
+        if (existingGuest.rows.length > 0) {
+            return res.status(409).json({ message: 'Guest already exists' });
+        }
+
+        // insert new guest if they don't already exist
+        const result = await pool.query(
+            'INSERT INTO guests (user_id, check_in_date, check_out_date, room_type) VALUES ($1, $2, $3, $4) RETURNING *',
+            [user_id, check_in_date, check_out_date, room_type]
+        );
+        res.json(result.rows[0]);
+    }   catch (err) {
+        console.error(err.message);
+        res.status(500).json({ message: "Error adding guest" });
+    }
+});
+
 app.get('/api/comments', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM comments');
@@ -109,7 +133,27 @@ app.get('/api/user/:id', async (req, res) => {
         console.error(err.message);
         res.status(500).json({ message: 'Internal server error' });
     }
-})
+});
+
+app.put('/api/guests/:id', async (req, res) => {
+    const { id } = req.params;
+    const { user_id, check_in_date, check_out_date, room_type } = req.body;
+    try {
+        const result = await pool.query(
+            'UPDATE guests SET user_id = $1, check_in_date = $2, check_out_date = $3, room_type = $4 WHERE id = $5 RETURNING *',
+            [user_id, check_in_date, check_out_date, room_type, id]
+        );
+        if (result.rows.length === 0) {
+            return res.status(404).json({ message: 'Guest not found' });
+        }
+        res.json(result.rows[0]);
+    }   catch (err) {
+        console.error(err.message);
+        res.status(500).json({ message: 'Error updating guest' });
+    }
+});
+
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

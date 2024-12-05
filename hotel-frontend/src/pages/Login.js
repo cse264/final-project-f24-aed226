@@ -29,8 +29,8 @@ const Login = ({ onLogin }) => {
     return (
         <form onSubmit={handleSubmit}>
             <h2>Login</h2>
-            <TextField label="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <TextField label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <TextField label="Email" value={email} onChange={(e) => setEmail(e.target.value)} sx={{ marginBottom: '15px', marginRight: '15px' }} />
+            <TextField label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} sx={{ marginBottom: '30px', marginRight: '90px' }} />
             <Button type="submit">Login</Button>
             <p>
                 Don't have an account? <Link to="/register">Register here</Link>.

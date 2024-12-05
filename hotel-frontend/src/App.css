@@ -8,18 +8,21 @@
 }
 
 .App form {
-  max-width: 400px;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 500px;
   width: 100%;
-  padding: 20px;
-  border: 1px solid #ddd;
+  padding: 30px;
+  border: 2px solid #ddd;
   border-radius: 10px;
   background-color: white;
 }
 
 .App form input, .App form textarea {
   width: 100%;
+  gap: 15px;
   padding: 10px;
-  margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ddd;
 }
@@ -27,4 +30,208 @@
 .App h2 {
   margin-bottom: 20px;
   text-align: center;
+}
+
+.weather-container {
+  max-width:  600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.weather-title {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.weather-details {
+  background-color: #e7f5ff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: #0056b3;
+}
+
+.weather-details p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.weather-error {
+  color: red;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.area-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.area-info h3 {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.area-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.area-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.admin-dashboard {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.guest-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.guest-table thead {
+  background-color: #4CAF50;
+  color: white;
+  text-align: left;
+}
+
+.guest-table thead th {
+  padding: 12px 15px;
+  font-weight: bold;
+}
+
+.guest-table tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.guest-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.guest-table tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  margin-top: 20px;
+}
+
+.form-input {
+  margin-bottom: 15px;
+  margin-right: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.message-success {
+  color: green;
+  margin-top: 15px;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.message-error {
+  color: red;
+  margin-top: 15px;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.dashboard {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.comments-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comment-item {
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.no-comments {
+  color: #777;
+  font-style: italic;
+}
+
+.loading {
+  color: #007bff
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.buttons-container {
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.no-admin-role {
+  color: #ff0000;
+  font-weight: bold;
 }

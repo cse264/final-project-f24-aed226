@@ -31,16 +31,18 @@ const Comments = () => {
                     value={guestId}
                     onChange={(e) => setGuestId(e.target.value)}
                     placeholder='Enter Guest ID (optional)'
+                    style={{ marginBottom: '15px' }}
                 />
                 <textarea
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                     placeholder="Write your comment here"
+                    style={{ marginBottom: '15px' }}
                     required
                 />
                 <button type="submit">Submit</button>
             </form>
-            {message && <p>{message}</p>}
+            {message && <p className={message.includes('Error') ? 'message-error' : 'message-success'}>{message}</p>}
         </div>
     );
 };

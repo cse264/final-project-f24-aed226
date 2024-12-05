@@ -39,12 +39,6 @@ function App() {
     localStorage.removeItem('isAuthenticated');
   };
 
-/*
-  useEffect(() => {
-    console.log("Authentication state changed:", isAuthenticated);
-  }, [isAuthenticated, userRole]);
-*/
-
   return (
     <Router>
       <div className="App">
@@ -90,7 +84,7 @@ function App() {
             path="/admin"
             element={isAuthenticated && userRole === 'admin' ? <AdminDashboard /> : <Navigate to="/login" />}
           />
-        </Routes>;
+        </Routes>
       </div>
     </Router>
   );
