@@ -1,0 +1,30 @@
+/* App.css */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.App form {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.App form input, .App form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.App h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
