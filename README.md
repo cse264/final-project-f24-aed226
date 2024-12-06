@@ -6,8 +6,11 @@
 Team member(s): Alex Dorris
 Email(s): aed226@lehigh.edu
 Application Name: Hotel Dashboard
-Description: A basic dashboard intedened for hotels. Allows users to leave comments and check weather data. Also allows admin users to enter guest information (such as room type) for user      accounts.
+
+Description: A basic dashboard intedened for hotels. Allows users to leave comments and check weather data. Also allows admin users to enter guest information (such as room type) for user accounts.
+
 API Keys needed: OpenWeatherMap
+
 Databases needed: Three tables (guests, users, and comments).
 * guests columns: id, user_id, check_in_date, check_out_date, room_type
 * users columns: id, username, email, password, role
