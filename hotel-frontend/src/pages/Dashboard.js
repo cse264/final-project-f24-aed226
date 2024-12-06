@@ -1,21 +1,23 @@
 // Dashboard.js
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // hook for navigation
+import axios from 'axios'; // library for making HTTP requests
 
+// display the dashboard
 function Dashboard({ userRole }) {
-    const [comments, setComments] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [comments, setComments] = useState([]); // holds comments fetched from API
+    const [loading, setLoading] = useState(true); // tracks whether data is still loading
+    const [error, setError] = useState(null); // stores error messages
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // hook to navigate different routes
 
+    // fetch comments when component mounts
     useEffect(() => {
         const fetchComments = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/comments');
+                const response = await axios.get('http://localhost:5000/api/comments'); // fetch comments from backend
                 console.log('Fetched comments:', response.data);
-                setComments(response.data);
+                setComments(response.data); // update the 'comments' state with fetched data
             }   catch (err) {
                 console.error('Error fetching comments:', err);
                 setError('Error fetching comments');
@@ -24,10 +26,11 @@ function Dashboard({ userRole }) {
             }
         };
 
-        fetchComments();
+        fetchComments(); // trigger fetchComments function
     }, []);
 
-    if (loading) {
+    // if data is loading, show a loading message
+    if (loading) { 
         return <p>Loading...</p>;
     }
 

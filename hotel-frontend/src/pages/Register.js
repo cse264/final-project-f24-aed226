@@ -26,11 +26,12 @@ const Register = () => {
 
     return (
         <form onSubmit={handleRegister}>
-            <h2>Create an account</h2>
+            <h2 className='register-title'>Create an account</h2>
             <TextField
                 label="Username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                sx={{ marginBottom: '10px', marginRight: '10px' }}
                 required
             />
             <TextField
@@ -38,6 +39,7 @@ const Register = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                sx={{ marginBottom: '10px', marginRight: '10px' }}
                 required
             />
             <TextField
@@ -45,11 +47,12 @@ const Register = () => {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                sx={{ marginBottom: '30px', marginRight: '50px' }}
                 required
             />
             <Button type="submit">Register</Button>
             {message && <p>{message}</p>}
-            <p>
+            <p className='register-redirect'>
                 Already have an account? <Link to="/login">Login here</Link>.
             </p>
         </form>

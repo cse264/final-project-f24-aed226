@@ -3,6 +3,29 @@
 ## Due Last day of Class
 ## First report due Monday Oct 28, 2024
 
+Team member(s): Alex Dorris
+Email(s): aed226@lehigh.edu
+Application Name: Hotel Dashboard
+Description: A basic dashboard intedened for hotels. Allows users to leave comments and check weather data. Also allows admin users to enter guest information (such as room type) for user      accounts.
+API Keys needed: OpenWeatherMap
+Databases needed: Three tables (guests, users, and comments).
+* guests columns: id, user_id, check_in_date, check_out_date, room_type
+* users columns: id, username, email, password, role
+* comments columns: id, guest_id, comment, timestamp
+How to run: Download both the hotel-frontend and hotel-backend directories, then change directories to hotel-frontend. From there use npm start (or similar).
+
+Video Link: https://drive.google.com/file/d/1gDo3x9KLysu7dvpSGZ4qe0HV1DCYkvf9/view?usp=sharing
+
+Tech Stack:
+* React.js
+* Axios
+* Open Weather Map API
+* HTML and CSS
+* PostgreSQL
+* Node.js
+* Express.js
+
+
 ### Build a web app in a team of 4-5
 
 ### Requirements:

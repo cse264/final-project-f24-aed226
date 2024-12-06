@@ -24,7 +24,7 @@ const Comments = () => {
 
     return (
         <div>
-            <h2>Leave a Comment</h2>
+            <h2 className='comments-title'>Leave a Comment</h2>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

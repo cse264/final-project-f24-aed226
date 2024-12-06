@@ -1,24 +1,29 @@
 // WeatherInfo.js
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from 'axios'; // library for making HTTP requests
 
+// display weather info
 const WeatherInfo = () => {
+    // state to store weather data and error messages
     const [weather, setWeather] = useState(null);
     const [error, setError] = useState(null);
 
+    // useEffect runs after component mounts to fetch weather data
     useEffect(() => {
+        // asynchronous function to fetch weather data
         const fetchWeather = async () => {
             try {
                 const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+                // API request to OpenWeatherMap using Mobile, AL as an example
                 const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Mobile&appid=${apiKey}`);
-                setWeather(response.data);
+                setWeather(response.data); // save fetched data in the 'weather' state
             }   catch (err) {
                 setError('Error fetching weather data');
             }
         };
 
-        fetchWeather();
-    }, []);
+        fetchWeather(); // call function to fetch weather data
+    }, []); // runs only once after component mounts
 
     return (
         <div>

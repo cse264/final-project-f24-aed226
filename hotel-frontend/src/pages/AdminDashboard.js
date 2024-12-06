@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const AdminDashboard = () => {
-    const [guests, setGuests] = useState([]);
-    const [error, setError] = useState(null);
-    const [newGuest, setNewGuest] = useState({ user_id: '', check_in_date: '', check_out_date: '', room_type: ''});
-    const [editingGuest, setEditingGuest] = useState(null);
+    const [guests, setGuests] = useState([]); // holds list of guests
+    const [error, setError] = useState(null); // stores error messages
+    const [newGuest, setNewGuest] = useState({ user_id: '', check_in_date: '', check_out_date: '', room_type: ''}); // holds form data for adding a new guest
+    const [editingGuest, setEditingGuest] = useState(null); // holds data for the guest being edited
 
+    // fetch guest data from the server
     useEffect(() => {
         const fetchGuests = async () => {
             try {
@@ -20,6 +21,7 @@ const AdminDashboard = () => {
         fetchGuests();
     }, []);
 
+    // handle adding a new guest
     const handleAddGuest = async () => {
         try {
             const response = await axios.post('http://localhost:5000/api/guests', newGuest);
@@ -34,6 +36,7 @@ const AdminDashboard = () => {
         }
     };
 
+    // save edits to guests
     const handleEditGuest = async (guestId) => {
         try {
             const response = await axios.put(`http://localhost:5000/api/guests/${guestId}`, editingGuest);
@@ -53,7 +56,7 @@ const AdminDashboard = () => {
 
             {/* form to add guest */}
             <div>
-                <h3>Add Guest</h3>
+                <h3 className='add-guest'>Add Guest</h3>
                 <input
                     type='text'
                     placeholder='User ID'
